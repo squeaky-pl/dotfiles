@@ -85,6 +85,8 @@ let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
 
 let g:jedi#related_names_command="0"
 
+let g:indentLine_char="│"
+
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
