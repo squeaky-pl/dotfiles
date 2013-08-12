@@ -66,11 +66,6 @@ set clipboard=unnamedplus
 
 nore ; :
 map <Leader>p :CtrlPMixed<CR>
-map <Leader>c :ConqueTerm 
-map <Leader>t :TlistToggle<CR>
-let Tlist_GainFocus_On_ToggleOpen = 1
-map <Leader>b :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\$py\.class$', '^__pycache__$']
 set wildignore=*.pyc,*$py.class,__pycache__
@@ -84,9 +79,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 au Syntax * hi ColorColumn ctermbg=black guibg=#222222
 au BufEnter * hi ColorColumn ctermbg=black guibg=#222222
-
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
