@@ -1,0 +1,9 @@
+[user]
+name = Paweł Piotr Przeradowski
+email = przeradowski@gmail.com
+
+[color]
+ui = true
+
+[push]
+default = current

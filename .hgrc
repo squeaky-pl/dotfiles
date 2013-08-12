@@ -1,0 +1,9 @@
+[ui]
+username = Paweł Piotr Przeradowski <przeradowski@gmail.com>
+merge = internal:merge
+
+[extensions]
+graphlog =
+color =
+transplant =
+mq =
