@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo apt-get install python-dev python-pip
+sudo pip install --upgrade pip
+sudo pip install virtualenv pylama py3kwarn
+

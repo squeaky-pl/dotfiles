@@ -10,7 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'davidhalter/jedi'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'ervandew/supertab'
@@ -83,7 +83,7 @@ au BufEnter * hi ColorColumn ctermbg=black guibg=#222222
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
 
-let g:jedi#related_names_command="0"
+let g:jedi#usage_command="0"
 
 let g:indentLine_char="│"
 
