@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+dconf load /org/gnome/desktop/input-sources/ <<EOF
+[/]
+sources=[('xkb', 'us+a;tgr-intl'), ('xkb', 'pl')]
+xkb-options=['caps:swapescape', 'compose:rwin']
+EOF
