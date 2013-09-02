@@ -64,6 +64,8 @@ set splitright
 
 set clipboard=unnamedplus
 
+set mouse=a
+
 nore ; :
 map <Leader>p :CtrlPMixed<CR>
 map <Leader>n :NERDTreeToggle<CR>
