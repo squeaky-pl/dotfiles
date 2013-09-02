@@ -87,7 +87,10 @@ let g:jedi#related_names_command="0"
 
 let g:indentLine_char="│"
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+nmap <leader>y <Plug>yankstack_substitute_older_paste
+nmap <leader>Y <Plug>yankstack_substitute_newer_paste
+
+" Delete trailing white space on save
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
