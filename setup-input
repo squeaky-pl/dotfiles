@@ -18,6 +18,14 @@ command='$RAISE gnome-terminal'
 name='gnome-terminal'
 EOF
 
+# Touchpad
+dconf load /org/gnome/settings-daemon/peripherals/touchpad/ <<EOF
+[/]
+scroll-method='two-finger-scrolling'
+horiz-scroll-enabled=true
+tap-to-click=false
+EOF
+
 # Layout, swap esc with capslock and enable compose key
 dconf load /org/gnome/desktop/input-sources/ <<EOF
 [/]
