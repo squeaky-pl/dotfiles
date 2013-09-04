@@ -89,6 +89,8 @@ let g:jedi#usage_command="0"
 
 let g:indentLine_char="│"
 
+let g:airline_powerline_fonts=1
+
 nmap <leader>y <Plug>yankstack_substitute_older_paste
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 
