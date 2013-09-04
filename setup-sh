@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+# tmux
+tmux -V >/dev/null || sudo apt-get install -y tmux
+ln -s $DIR/.tmux.conf ~/.tmux.conf
+
+# zshell
+zsh --version >/dev/null || sudo apt-get install -y zsh
+
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+ln -s $DIR/.zshrc ~/.zshrc
+sudo chsh -s /bin/zsh
+
+# patched fonts with extra symbols
+mkdir -p ~/.fonts
+git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
+fc-cache -vf ~/.fonts
+
+# Gnome Terminal configuration
+PROFILE=/apps/gnome-terminal/profiles/Default
+
+gconftool --type bool --set $PROFILE/use_system_font false
+gconftool --type bool --set $PROFILE/use_theme_colors false
+gconftool --type float --set $PROFILE/background_darkness 0.9
+gconftool --type string --set $PROFILE/background_type transparent
+gconftool --type string --set $PROFILE/background_color "#000000000000"
+gconftool --type string --set $PROFILE/foreground_color "#ffffffffffff"
+gconftool --type string --set $PROFILE/font "Inconsolata for Powerline Medium 12"
+gconftool --type bool --set $PROFILE/scrollback_unlimited true
+gconftool --type string --set $PROFILE/scrollbar_position hidden
+
