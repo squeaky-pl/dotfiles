@@ -16,6 +16,7 @@ sudo chsh -s /bin/zsh
 # patched fonts with extra symbols
 mkdir -p ~/.fonts
 git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
+ln -s $DIR/.fonts.conf ~/.fonts.conf
 fc-cache -vf ~/.fonts
 
 # Gnome Terminal configuration

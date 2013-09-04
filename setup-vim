@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+vim --version  >/dev/null || sudo apt-get install vim
 
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.vim ~/.vim
+DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-mkdir ~/.vim/bundle
+ln -s $DIR/.vimrc ~/.vimrc
+ln -s $DIR/.vim ~/.vim
+
+mkdir -p ~/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 vim +BundleInstall +qall
