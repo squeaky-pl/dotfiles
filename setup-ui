@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# show date in clock
+dconf write /org/gnome/desktop/interface/clock-show-date true

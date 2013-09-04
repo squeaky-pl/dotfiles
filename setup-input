@@ -6,13 +6,16 @@ xdotool -v >/dev/null || sudo apt-get install -y xdotool
 RAISE="$( cd "$( dirname "$0" )" && pwd )"/raise.py
 
 
-dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <<EOF
-[custom1]
+dconf load /org/gnome/settings-daemon/plugins/media-keys/ <<EOF
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+
+[custom-keybindings/custom1]
 binding='<Alt>1'
 command='$RAISE google-chrome'
 name='google-chrome'
 
-[custom0]
+[custom-keybindings/custom0]
 binding='<Alt>2'
 command='$RAISE gnome-terminal'
 name='gnome-terminal'
