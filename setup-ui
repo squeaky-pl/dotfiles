@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# favourite apps
+dconf load /org/gnome/shell/ <<EOF
+[/]
+favorite-apps=['google-chrome.desktop','gnome-terminal.desktop']
+EOF
+
 # window theme
 sudo add-apt-repository -y ppa:webupd8team/themes
 sudo apt-get update
