@@ -27,7 +27,7 @@ Bundle 'spiiph/vim-space'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
-
+Bundle 'embear/vim-localvimrc'
 
 colors darkspectrum
 
@@ -79,6 +79,8 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 
+au FileType rst set spell
+
 au Syntax * hi ColorColumn ctermbg=black guibg=#222222
 au BufEnter * hi ColorColumn ctermbg=black guibg=#222222
 
@@ -90,6 +92,8 @@ let g:jedi#usage_command="0"
 let g:indentLine_char="│"
 
 let g:airline_powerline_fonts=1
+
+let g:localvimrc_sandbox = 0
 
 nmap <leader>y <Plug>yankstack_substitute_older_paste
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
@@ -103,3 +107,4 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.html :call DeleteTrailingWS()
+autocmd BufWrite *.rst :call DeleteTrailingWS()
