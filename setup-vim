@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-vim --version  >/dev/null || sudo apt-get install vim
+vim --version  >/dev/null || sudo apt-get install -y vim
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 

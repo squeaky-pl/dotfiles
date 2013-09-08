@@ -2,8 +2,8 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-git --version >/dev/null || sudo apt-get install git
+git --version >/dev/null || sudo apt-get install -y git
 ln -s $DIR/.gitconfig ~/.gitconfig
 
-hg --version >/dev/null || sudo apt-get install mercurial
+hg --version >/dev/null || sudo apt-get install -y mercurial
 ln -s $DIR/.hgrc ~/.hgrc
