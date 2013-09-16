@@ -43,8 +43,12 @@ ZSH_THEME="agnoster"
 plugins=(git tmux debian nyan pip python virtualenv)
 
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=false
 
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
