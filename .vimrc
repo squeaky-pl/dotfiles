@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 
+Bundle 'gkz/vim-ls'
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim.git'
@@ -69,7 +70,7 @@ set mouse=a
 nore ; :
 map <Leader>p :CtrlPMixed<CR>
 map <Leader>n :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$', '\$py\.class$', '^__pycache__$']
+let NERDTreeIgnore = ['\.pyc$', '\$py\.class$', '^__pycache__$', '^node_modules$']
 set wildignore=*.pyc,*$py.class,__pycache__
 map <Leader>u :GundoToggle<CR>
 
@@ -87,7 +88,7 @@ au BufEnter * hi ColorColumn ctermbg=black guibg=#222222
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
 
-let g:jedi#usage_command="0"
+let g:jedi#usage_command=""
 
 let g:indentLine_char="│"
 
@@ -108,3 +109,4 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.html :call DeleteTrailingWS()
 autocmd BufWrite *.rst :call DeleteTrailingWS()
+autocmd BufWrite *.ls :call DeleteTrailingWS()
