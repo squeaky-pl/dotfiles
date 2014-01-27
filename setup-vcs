@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-git --version >/dev/null || sudo apt-get install -y git
+git --version >/dev/null || sudo `./get-install-cmd` git
 ln -s $DIR/.gitconfig ~/.gitconfig
 
-hg --version >/dev/null || sudo apt-get install -y mercurial
+hg --version >/dev/null || sudo `./get-install-cmd` mercurial
 ln -s $DIR/.hgrc ~/.hgrc

@@ -3,11 +3,11 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # tmux
-tmux -V >/dev/null || sudo apt-get install -y tmux
+tmux -V >/dev/null || sudo `./get-install-cmd` tmux
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 
 # zshell
-zsh --version >/dev/null || sudo apt-get install -y zsh
+zsh --version >/dev/null || sudo `./get-install-cmd` zsh
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ln -s $DIR/.zshrc ~/.zshrc
@@ -20,15 +20,19 @@ ln -s $DIR/.fonts.conf ~/.fonts.conf
 fc-cache -vf ~/.fonts
 
 # Gnome Terminal configuration
-PROFILE=/apps/gnome-terminal/profiles/Default
+dconf load /org/gnome/terminal/legacy/ <<EOF
+[profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+visible-name='squeaky'
+use-system-font=false
+background-color='rgb(0,0,0)'
+use-theme-colors=false
+foreground-color='rgb(255,255,255)'
+background-darkness=0.9
+background-type='transparent'
+font='Terminess Powerline 12'
+scrollback-unlimited=true
+scrollbar-policy='never'
 
-gconftool --type bool --set $PROFILE/use_system_font false
-gconftool --type bool --set $PROFILE/use_theme_colors false
-gconftool --type float --set $PROFILE/background_darkness 0.9
-gconftool --type string --set $PROFILE/background_type transparent
-gconftool --type string --set $PROFILE/background_color "#000000000000"
-gconftool --type string --set $PROFILE/foreground_color "#ffffffffffff"
-gconftool --type string --set $PROFILE/font "Inconsolata for Powerline Medium 12"
-gconftool --type bool --set $PROFILE/scrollback_unlimited true
-gconftool --type string --set $PROFILE/scrollbar_position hidden
-
+[/]
+schema-version=uint32 3
+EOF

@@ -51,4 +51,4 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh

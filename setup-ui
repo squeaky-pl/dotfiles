@@ -3,19 +3,27 @@
 # favourite apps
 dconf load /org/gnome/shell/ <<EOF
 [/]
-favorite-apps=['google-chrome.desktop','gnome-terminal.desktop']
+favorite-apps=['mozilla-firefox.desktop','gnome-terminal.desktop']
 EOF
 
 # window theme
-sudo add-apt-repository -y ppa:webupd8team/themes
-sudo apt-get update
-sudo apt-get install -y mediterraneannight-gtk-theme
+if [ ! -f /tmp/MediterraneanNight-2.03.tar.gz ]; then
+    wget -P /tmp https://dl.dropboxusercontent.com/u/80497678/MediterraneanNight-2.03.tar.gz
+fi
+mkdir -p ~/.themes
+tar -C ~/.themes -xf /tmp/MediterraneanNight-2.03.tar.gz
 
 # icon theme
-if [ ! -f /tmp/faenza-icon-theme_1.3.1_all.deb ]; then
-    wget -P /tmp https://launchpad.net/~tiheum/+archive/equinox/+files/faenza-icon-theme_1.3.1_all.deb
+if [ ! -f /tmp/faenza-icon-theme_1.3.zip ]; then
+    wget -P /tmp http://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.3.zip
 fi
-sudo dpkg -i /tmp/faenza-icon-theme_1.3.1_all.deb
+mkdir /tmp/faenza
+pushd .
+cd /tmp/faenza
+unzip /tmp/faenza-icon-theme_1.3.zip
+popd
+
+/tmp/faenza/INSTALL
 
 # show date in clock, scale, icons, theme
 dconf load /org/gnome/desktop/interface/ <<EOF
