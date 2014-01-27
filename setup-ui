@@ -30,12 +30,12 @@ dconf load /org/gnome/desktop/interface/ <<EOF
 [/]
 clock-show-date=true
 text-scaling-factor=0.8
-icon-theme='Faenza-Ambiance'
-gtk-theme='MediterraneanNight'
+icon-theme='Faenza-Dark'
+gtk-theme='MediterraneanWhite'
 EOF
 
 # wm theme
 dconf load /org/gnome/desktop/wm/preferences/ <<EOF
 [/]
-theme='MediterraneanNight'
+theme='Adwaita'
 EOF
