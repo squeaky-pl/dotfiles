@@ -6,13 +6,6 @@ dconf load /org/gnome/shell/ <<EOF
 favorite-apps=['mozilla-firefox.desktop','gnome-terminal.desktop']
 EOF
 
-# window theme
-if [ ! -f /tmp/MediterraneanNight-2.03.tar.gz ]; then
-    wget -P /tmp https://dl.dropboxusercontent.com/u/80497678/MediterraneanNight-2.03.tar.gz
-fi
-mkdir -p ~/.themes
-tar -C ~/.themes -xf /tmp/MediterraneanNight-2.03.tar.gz
-
 # icon theme
 if [ ! -f /tmp/faenza-icon-theme_1.3.zip ]; then
     wget -P /tmp http://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.3.zip
@@ -31,7 +24,7 @@ dconf load /org/gnome/desktop/interface/ <<EOF
 clock-show-date=true
 text-scaling-factor=0.8
 icon-theme='Faenza-Dark'
-gtk-theme='MediterraneanWhite'
+gtk-theme='Adwaita'
 EOF
 
 # wm theme
