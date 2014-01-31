@@ -96,6 +96,7 @@ let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
 let g:jedi#usage_command=""
 
 let g:indentLine_char="│"
+let g:indentLine_color_term = 239
 
 let g:airline_powerline_fonts=1
 let g:airline_exclude_preview = 1
