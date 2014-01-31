@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configure quick access commands
-xdotool -v >/dev/null || sudo `./get-install-cmd` xdotool
+xdotool -v &>/dev/null || sudo `./get-install-cmd` xdotool
 
 RAISE="$( cd "$( dirname "$0" )" && pwd )"/raise.py
 

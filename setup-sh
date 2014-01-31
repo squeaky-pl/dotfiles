@@ -3,14 +3,14 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # tmux
-tmux -V >/dev/null || sudo `./get-install-cmd` tmux
+tmux -V &>/dev/null || sudo `./get-install-cmd` tmux
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 
 # tmux powerline
 git clone git@github.com:squeaky-pl/tmux-powerline.git ~/.tmux-powerline
 
 # zshell
-zsh --version >/dev/null || sudo `./get-install-cmd` zsh
+zsh --version &>/dev/null || sudo `./get-install-cmd` zsh
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ln -s $DIR/.zshrc ~/.zshrc
