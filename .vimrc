@@ -29,6 +29,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'embear/vim-localvimrc'
+Bundle 'szw/vim-ctrlspace'
 
 colors darkspectrum
 
@@ -82,8 +83,12 @@ au Syntax * RainbowParenthesesLoadBraces
 
 au FileType rst set spell
 
-au Syntax * hi ColorColumn ctermbg=black guibg=#222222
-au BufEnter * hi ColorColumn ctermbg=black guibg=#222222
+au Syntax * hi ColorColumn ctermbg=234 guibg=#111111
+au BufEnter * hi ColorColumn ctermbg=234 guibg=#111111
+
+hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
+hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
@@ -93,6 +98,7 @@ let g:jedi#usage_command=""
 let g:indentLine_char="│"
 
 let g:airline_powerline_fonts=1
+let g:airline_exclude_preview = 1
 
 let g:localvimrc_sandbox = 0
 
