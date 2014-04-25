@@ -52,5 +52,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+export EDITOR=vim
+
+if [ -f ~/.zshrc-extra ]; then
+    source ~/.zshrc-extra
+fi
+
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
