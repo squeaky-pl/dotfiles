@@ -54,6 +54,9 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 
+alias agpy='ag -G .py'
+alias agjs='ag -G .js'
+
 if [ -f ~/.zshrc-extra ]; then
     source ~/.zshrc-extra
 fi
