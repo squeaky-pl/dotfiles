@@ -34,7 +34,7 @@ Bundle 'szw/vim-ctrlspace'
 colors darkspectrum
 
 set list
-set lcs=eol:↲,tab:→.,trail:·
+set lcs=eol:↲,tab:→.,trail:·,nbsp:␣
 
 set expandtab
 set shiftwidth=4
@@ -42,9 +42,12 @@ set softtabstop=4
 set tabstop=4
 
 set number
+set relativenumber
 set cul
 set nowrap
 set cc=80
+
+set scrolloff=3
 
 set incsearch
 set hlsearch
@@ -92,6 +95,10 @@ hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
+let g:syntastic_error_symbol='✖'
+let g:syntastic_style_error_symbol='⌁'
+let g:syntastic_style_warning_symbol='✠'
+let g:syntastic_warning_symbol='✗'
 
 let g:jedi#usage_command=""
 
@@ -117,3 +124,6 @@ autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.html :call DeleteTrailingWS()
 autocmd BufWrite *.rst :call DeleteTrailingWS()
 autocmd BufWrite *.ls :call DeleteTrailingWS()
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
