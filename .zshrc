@@ -57,6 +57,7 @@ export EDITOR=vim
 alias agpy='ag -G .py'
 alias agjs='ag -G .js'
 alias agml='ag -G .html'
+alias agcss='ag -G .css'
 
 if [ -f ~/.zshrc-extra ]; then
     source ~/.zshrc-extra
