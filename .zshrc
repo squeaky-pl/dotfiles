@@ -52,6 +52,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+alias vim=vimx
+
 export EDITOR=vim
 
 alias agpy='ag -G .py'
