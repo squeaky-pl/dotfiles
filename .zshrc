@@ -42,7 +42,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git debian nyan python virtualenv tmux history-substring-search)
+plugins=(git debian nyan python virtualenv tmux zsh-syntax-highlighting history-substring-search autosuggestions)
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
@@ -66,7 +66,6 @@ alias agml='ag -G .html'
 alias agcss='ag -G .css'
 
 # autosuggestions
-source ~/.zsh-autosuggestions/autosuggestions.zsh
 zle-line-init() {
     zle autosuggest-start
 }
