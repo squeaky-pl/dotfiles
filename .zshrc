@@ -42,7 +42,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git debian nyan python virtualenv tmux)
+plugins=(git debian nyan python virtualenv tmux history-substring-search)
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
@@ -56,10 +56,22 @@ alias vim=vimx
 
 export EDITOR=vim
 
+# bind UP and DOWN arrow keys for history search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 alias agpy='ag -G .py'
 alias agjs='ag -G .js'
 alias agml='ag -G .html'
 alias agcss='ag -G .css'
+
+# autosuggestions
+source ~/.zsh-autosuggestions/autosuggestions.zsh
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
 
 if [ -f ~/.zshrc-extra ]; then
     source ~/.zshrc-extra

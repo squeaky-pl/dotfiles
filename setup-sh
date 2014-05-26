@@ -16,6 +16,8 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ln -s $DIR/.zshrc ~/.zshrc
 sudo chsh -s /bin/zsh $USER
 
+git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
+
 # patched fonts with extra symbols
 mkdir -p ~/.fonts
 git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
