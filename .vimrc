@@ -30,7 +30,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'embear/vim-localvimrc'
 Bundle 'szw/vim-ctrlspace'
-Plugin 'mozilla/rust', {'rtp': 'src/etc/vim'}
+Bundle 'sheerun/vim-polyglot'
 
 colors darkspectrum
 
