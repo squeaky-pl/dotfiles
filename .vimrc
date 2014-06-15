@@ -114,11 +114,6 @@ let g:localvimrc_sandbox = 0
 let python_highlight_builtins = 1
 let python_highlight_exceptions = 1
 let python_highlight_string_formatting = 1
-hi link PythonStatement SpecialKey
-hi link PythonRepeat Title
-hi link PythonConditional Title
-hi link PythonImport Special
-hi link PythonException Title
 
 nmap <leader>y <Plug>yankstack_substitute_older_paste
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
