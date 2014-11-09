@@ -31,6 +31,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'embear/vim-localvimrc'
 Bundle 'szw/vim-ctrlspace'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'michaeljsmith/vim-indent-object'
 
 colors darkspectrum
 
