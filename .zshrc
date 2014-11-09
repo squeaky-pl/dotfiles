@@ -71,6 +71,7 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
+export PATH=~/dotfiles/bin:$PATH
 
 if [ -f ~/.zshrc-extra ]; then
     source ~/.zshrc-extra
