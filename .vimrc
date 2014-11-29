@@ -97,6 +97,7 @@ hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['python', 'pylama', 'py3kwarn']
+let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_error_symbol='✖'
 let g:syntastic_style_error_symbol='⌁'
 let g:syntastic_style_warning_symbol='✠'
