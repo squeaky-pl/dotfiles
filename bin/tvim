@@ -1,5 +1,5 @@
 #!/bin/bash
 
-tmux splitw -p 30 vim
+tmux splitw -p 30 vimx
 tmux swap-pane -s 0 -t 1
 tmux send-keys ":NERDTreeToggle" C-m
