@@ -1,0 +1,7 @@
+Working with binary data:
+
+xxd -p -s [offset opt in hex] -l [length] input > tmp # convert to hexdump at offset and length
+xxd -r -p tmp > output # convert back to bin
+
+xxd -p -s 0xf8d -l 431 video.webm > hexframe
+xxd -r -p hexframe > binframe
