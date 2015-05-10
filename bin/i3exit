@@ -1,13 +1,12 @@
 #!/bin/bash
 
 lock() {
-#  $HOME/.config/i3lock/i3lock.sh
-  pwd
+  i3lock -u
 }
 
 case "$1" in
  lock)
-   lock
+    lock
     ;;
   logout)
     i3-msg exit
