@@ -1,0 +1,4 @@
+urxvt256c.scrollBar: false
+urxvt256c.saveLines: 65535
+urxvt256c.background: #000000
+urxvt256c.foreground: #FFFFFF
