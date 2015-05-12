@@ -2,3 +2,7 @@ urxvt256c.scrollBar: false
 urxvt256c.saveLines: 65535
 urxvt256c.background: #000000
 urxvt256c.foreground: #FFFFFF
+
+urxvt256c.perl-ext-common: default,matcher
+urxvt256c.url-launcher: /usr/bin/firefox
+urxvt256c.matcher.button: 1
