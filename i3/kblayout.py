@@ -3,6 +3,7 @@
 import subprocess
 
 
+options = ['caps:swapescape', 'compose:rwin']
 layouts = [('us', 'altgr-intl'), ('pl', None)]
 
 
@@ -16,6 +17,8 @@ def set_layout(layout, variant):
     cmd = ['setxkbmap', '-layout', layout]
     if variant:
         cmd.extend(['-variant', variant])
+    for option in options:
+        cmd.extend(['-option', option])
     subprocess.check_call(cmd)
 
 
