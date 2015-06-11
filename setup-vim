@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-vim --version  >/dev/null || sudo `./get-install-cmd` vim
+vim --version  >/dev/null || sudo dnf install -y vim-X11
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
