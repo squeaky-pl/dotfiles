@@ -10,11 +10,11 @@ ln -s $DIR/.zshrc ~/.zshrc
 sudo chsh -s /bin/zsh $USER
 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone git://github.com/tarruda/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 # patched fonts with extra symbols
 mkdir -p ~/.fonts
-git clone git@github.com:Lokaltog/powerline-fonts.git ~/.fonts/powerline-fonts
+git clone git@github.com:powerline/fonts.git ~/.fonts/powerline-fonts
 ln -s $DIR/.fonts.conf ~/.fonts.conf
 fc-cache -vf ~/.fonts
 
@@ -26,12 +26,13 @@ use-system-font=false
 background-color='rgb(0,0,0)'
 use-theme-colors=false
 foreground-color='rgb(255,255,255)'
-background-darkness=0.9
+background-transparency-percent=5
 background-type='transparent'
-font='Terminess Powerline 12'
+font='Terminess Powerline Regular 12'
 scrollback-unlimited=true
 scrollbar-policy='never'
 
 [/]
 schema-version=uint32 3
+default-show-menubar=false
 EOF
