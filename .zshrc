@@ -44,7 +44,7 @@ ZSH_THEME="agnoster"
 
 plugins=(git debian nyan python virtualenv tmux zsh-syntax-highlighting history-substring-search autosuggestions)
 
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_FIXTERM=false
 

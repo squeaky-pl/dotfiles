@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo `./get-install-cmd` python-dev python-devel python-pip
+sudo dnf install -y python-dev python-devel python-pip
 sudo pip install --upgrade pip
 sudo pip install virtualenv pylama py3kwarn virtualenvwrapper
 
