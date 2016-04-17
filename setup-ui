@@ -1,37 +1,28 @@
 #!/bin/bash
 
+set -e
+
 # favourite apps
 dconf load /org/gnome/shell/ <<EOF
 [/]
 favorite-apps=['mozilla-firefox.desktop','gnome-terminal.desktop']
 EOF
 
-# icon theme
-if [ ! -f /tmp/faenza-icon-theme_1.3.zip ]; then
-    wget -P /tmp http://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.3.zip
-fi
-mkdir /tmp/faenza
-pushd .
-cd /tmp/faenza
-unzip /tmp/faenza-icon-theme_1.3.zip
-popd
-
-/tmp/faenza/INSTALL
+# numix theme
+sudo dnf copr enable -y numix/numix
+sudo dnf install -y numix-icon-theme-circle
 
 # show date in clock, scale, icons, theme
 dconf load /org/gnome/desktop/interface/ <<EOF
 [/]
-font-name='DejaVu Sans 11'
-document-font-name='DejaVu Sans 11'
 monospace-font-name='Terminess Powerline 11'
 clock-show-date=true
-text-scaling-factor=0.8
-icon-theme='Faenza-Dark'
-gtk-theme='Adwaita'
+text-scaling-factor=0.9
+icon-theme='Numix-Circle'
 EOF
 
-# wm theme
-dconf load /org/gnome/desktop/wm/preferences/ <<EOF
+# cycle only through windows in current workspace
+dconf load /org/gnome/shell/app-switcher/ <<EOF
 [/]
-theme='Adwaita'
+current-workspace-only=true
 EOF
