@@ -35,3 +35,6 @@ EOF
 dconf load /org/gnome/desktop/wm/preferences/ <<EOF
 [/]
 EOF
+
+# misc programs
+sudo dnf install -y shutter # take screenshot and edit them
