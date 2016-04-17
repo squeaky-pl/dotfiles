@@ -21,8 +21,17 @@ text-scaling-factor=0.9
 icon-theme='Numix-Circle'
 EOF
 
+# global dark theme
+mkdir -p $HOME/.config/gtk-3.0
+cp ui/settings.ini $HOME/.config/gtk-3.0
+
 # cycle only through windows in current workspace
 dconf load /org/gnome/shell/app-switcher/ <<EOF
 [/]
 current-workspace-only=true
+EOF
+
+# wm preferences go here
+dconf load /org/gnome/desktop/wm/preferences/ <<EOF
+[/]
 EOF
