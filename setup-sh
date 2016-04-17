@@ -14,9 +14,8 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plu
 
 # patched fonts with extra symbols
 mkdir -p ~/.fonts
-git clone git@github.com:powerline/fonts.git ~/.fonts/powerline-fonts
-ln -s $DIR/.fonts.conf ~/.fonts.conf
-fc-cache -vf ~/.fonts
+git clone git@github.com:powerline/fonts.git ~/powerline-fonts
+~/powerline-fonts/install.sh
 
 # Gnome Terminal configuration
 dconf load /org/gnome/terminal/legacy/ <<EOF

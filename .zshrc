@@ -64,4 +64,7 @@ if [ -f ~/.zshrc-extra ]; then
 fi
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
