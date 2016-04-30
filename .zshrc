@@ -50,12 +50,16 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim=vimx
 
-export EDITOR=vim
+export EDITOR=vimx
 
 alias agpy='ag -G .py'
 alias agjs='ag -G .js'
 alias agml='ag -G .html'
 alias agcss='ag -G .css'
+
+alias dc='docker-compose `cat docker-compose.opt 2>/dev/null`'
+alias dcu='dc up --build'
+alias dcd='dc down --remove-orphans'
 
 export PATH=~/dotfiles/bin:$PATH
 
