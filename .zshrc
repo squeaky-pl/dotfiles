@@ -60,6 +60,7 @@ alias agcss='ag -G .css'
 alias dc='docker-compose `cat docker-compose.opt 2>/dev/null`'
 alias dcu='dc up --build'
 alias dcd='dc down --remove-orphans'
+alias dcr='dc run --rm'
 
 export PATH=~/dotfiles/bin:$PATH
 
