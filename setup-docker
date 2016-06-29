@@ -2,7 +2,7 @@
 
 set -e
 
-FEDORA_VERSION=`lsb_release -rs`
+FEDORA_VERSION=`grep -ow -E [[:digit:]]+ /etc/system-release`
 
 sudo tee -a /etc/yum.repos.d/docker-main.repo <<-EOF
 [docker-main-repo]
