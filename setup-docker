@@ -13,6 +13,8 @@ gpgcheck=1
 gpg_key=https://yum.dockerproject.org/gpg
 EOF
 
+sudo rpm --import https://yum.dockerproject.org/gpg
+
 sudo cp docker/overlayfs.conf /etc/modules-load.d
 sudo modprobe overlay
 
