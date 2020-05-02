@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="terminalparty"
+ZSH_THEME="miloshadzic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -42,15 +42,15 @@ ZSH_THEME="terminalparty"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git debian python virtualenv zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git debian zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-alias vim=vimx
+# alias vim=vimx
 
-export EDITOR=vimx
+# export EDITOR=vimx
 
 alias agpy='ag -G .py'
 alias agjs='ag -G .js'
@@ -62,7 +62,9 @@ alias dcu='dc up --build'
 alias dcd='dc down --remove-orphans'
 alias dcr='dc run --rm'
 
-export PATH=~/dotfiles/bin:$PATH
+eval "$(starship init zsh)"
+
+export PATH=~/.local/bin:~/dotfiles/bin:$PATH
 
 if [ -f ~/.zshrc-extra ]; then
     source ~/.zshrc-extra
