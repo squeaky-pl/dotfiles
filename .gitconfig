@@ -7,3 +7,5 @@ ui = true
 
 [push]
 default = current
+[core]
+attributesfile = ~/.gitattributes
