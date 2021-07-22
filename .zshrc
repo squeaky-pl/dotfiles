@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+# shellcheck disable=SC2034
 ZSH_THEME="miloshadzic"
 
 # Example aliases
@@ -42,9 +44,11 @@ ZSH_THEME="miloshadzic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
+# shellcheck disable=SC2034
 plugins=(git debian zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+# shellcheck disable=SC1091
+source "$ZSH"/oh-my-zsh.sh
 
 # Customize to your needs...
 
@@ -67,11 +71,13 @@ eval "$(starship init zsh)"
 export PATH=~/.local/bin:~/dotfiles/bin:$PATH
 
 if [ -f ~/.zshrc-extra ]; then
+    # shellcheck disable=SC1090
     source ~/.zshrc-extra
 fi
 
 export WORKON_HOME=~/.virtualenvs
 
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    # shellcheck disable=SC1091
     source /usr/bin/virtualenvwrapper.sh
 fi
