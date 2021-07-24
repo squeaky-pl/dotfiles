@@ -66,9 +66,10 @@ alias dcu='dc up --build'
 alias dcd='dc down --remove-orphans'
 alias dcr='dc run --rm'
 
+export PATH=~/.local/bin:~/dotfiles/bin:$PATH
+
 starship --version &>/dev/null && eval "$(starship init zsh)"
 
-export PATH=~/.local/bin:~/dotfiles/bin:$PATH
 
 if [ -f ~/.zshrc-extra ]; then
     # shellcheck disable=SC1090

@@ -16,6 +16,14 @@ fi
 safe_clone git://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 safe_clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
+mkdir -p ~/.local/bin
+tmpfile=$(mktemp /tmp/install-starship.XXXXXX)
+curl -fsSL --output "$tmpfile" https://starship.rs/install.sh
+chmod a+x "$tmpfile"
+"$tmpfile" -b ~/.local/bin -y
+mkdir -p ~/.config
+safe_symlink "$DIR"/starship.toml ~/.config/starship.toml
+
 if [ "$(detect_os)" != "Darwin" ]; then
 	# patched fonts with extra symbols
 	mkdir -p ~/.fonts

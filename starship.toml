@@ -1,0 +1,5 @@
+[git_branch]
+symbol = "🌿 "
+
+[git_metrics]
+disabled = false
