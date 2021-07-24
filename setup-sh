@@ -9,7 +9,9 @@ zsh --version &>/dev/null || install_package zsh
 
 safe_clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 safe_symlink "$DIR"/.zshrc ~/.zshrc
-sudo usermod -s /bin/zsh "$USER"
+if [ "$(detect_os)" != "Darwin" ]; then
+    sudo usermod -s /bin/zsh "$USER"
+fi
 
 safe_clone git://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 safe_clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions

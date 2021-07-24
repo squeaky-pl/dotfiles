@@ -66,7 +66,7 @@ alias dcu='dc up --build'
 alias dcd='dc down --remove-orphans'
 alias dcr='dc run --rm'
 
-eval "$(starship init zsh)"
+starship --version &>/dev/null && eval "$(starship init zsh)"
 
 export PATH=~/.local/bin:~/dotfiles/bin:$PATH
 
