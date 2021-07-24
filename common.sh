@@ -35,3 +35,14 @@ function safe_symlink() {
 	fi
 	ln -sf "$1" "$2"
 }
+
+function safe_clone() {
+	if [ -d "$2" ]; then
+		pushd .
+		cd "$2" || return
+		git pull
+		popd || return
+	else
+		git clone "$1" "$2"
+	fi
+}

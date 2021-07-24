@@ -1,24 +1,29 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "$0" )" && pwd )"
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# zshell
-zsh --version &>/dev/null || sudo dnf install -y zsh
+# shellcheck disable=SC1091
+source "$DIR"/common.sh
 
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-ln -s $DIR/.zshrc ~/.zshrc
-sudo usermod -s /bin/zsh $USER
+zsh --version &>/dev/null || install_package zsh
 
-git clone git://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+safe_clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+safe_symlink "$DIR"/.zshrc ~/.zshrc
+sudo usermod -s /bin/zsh "$USER"
 
-# patched fonts with extra symbols
-mkdir -p ~/.fonts
-git clone git@github.com:powerline/fonts.git ~/powerline-fonts
-~/powerline-fonts/install.sh
+safe_clone git://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+safe_clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-# Gnome Terminal configuration
-dconf load /org/gnome/terminal/legacy/ <<EOF
+if [ "$(detect_os)" != "Darwin" ]; then
+	# patched fonts with extra symbols
+	mkdir -p ~/.fonts
+	safe_clone git@github.com:powerline/fonts.git ~/powerline-fonts
+	~/powerline-fonts/install.sh
+fi
+
+if dconf help &>/dev/null; then
+	# Gnome Terminal configuration
+	dconf load /org/gnome/terminal/legacy/ <<EOF
 [profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 visible-name='squeaky'
 use-system-font=false
@@ -35,3 +40,4 @@ scrollbar-policy='never'
 schema-version=uint32 3
 default-show-menubar=false
 EOF
+fi
