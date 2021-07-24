@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "$0" )" && pwd )"
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
-git --version &>/dev/null || sudo dnf install -y git
-ln -s $DIR/.gitconfig ~/.gitconfig
-ln -s $DIR/.gitattributes ~/.gitattributes
+# shellcheck disable=SC1091
+source "$DIR"/common.sh
 
-hg --version &>/dev/null || sudo dnf install -y mercurial
-ln -s $DIR/.hgrc ~/.hgrc
+git --version &>/dev/null || install_package git
+
+safe_symlink "$DIR"/.gitconfig ~/.gitconfig
+safe_symlink "$DIR"/.gitattributes ~/.gitattributes
+
+hg --version &>/dev/null || install_package mercurial
+safe_symlink "$DIR"/.hgrc ~/.hgrc

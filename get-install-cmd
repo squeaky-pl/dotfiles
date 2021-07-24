@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if grep -q ^NAME=Fedora /etc/*-release; then
-    echo 'yum install -y'
-else
-    echo 'apt-get install -y'
-fi
