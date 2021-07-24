@@ -43,9 +43,8 @@ ZSH_THEME="miloshadzic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-
 # shellcheck disable=SC2034
-plugins=(git debian zsh-autosuggestions)
+plugins=(git debian zsh-autosuggestions zsh-syntax-highlighting)
 
 # shellcheck disable=SC1091
 source "$ZSH"/oh-my-zsh.sh
