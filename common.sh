@@ -29,7 +29,7 @@ function install_package() {
 }
 
 function safe_symlink() {
-	if ! cmp --silent -- "$1" "$2"; then
+	if [ -f "$2" ] && ! cmp --silent -- "$1" "$2"; then
 		echo "Files $1 and $2 differ, saving a backup to $2.bak"
 		cp "$2"{,.bak}
 	fi
