@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "open_powerlauncher": {
+            "win": false,
+            "ctrl": true,
+            "alt": true,
+            "shift": false,
+            "code": 32,
+            "key": ""
+        },
+        "use_centralized_keyboard_hook": true
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "properties": {
+        "highlight_radius": {
+            "value": 50
+        }
+    },
+    "version": "1.2"
+}

@@ -1,0 +1,14 @@
+{
+    "remapKeys": {
+        "inProcess": [
+            {
+                "originalKeys": "20",
+                "newRemapKeys": "27"
+            },
+            {
+                "originalKeys": "27",
+                "newRemapKeys": "20"
+            }
+        ]
+    }
+}
