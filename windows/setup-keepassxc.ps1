@@ -1,7 +1,9 @@
 scoop bucket add extras
 scoop install extras/keepassxc
 
-Copy-Item $PSScriptRoot/KeePassXC -Destination $env:LOCALAPPDATA -Recurse -Force
+Copy-Item $PSScriptRoot/KeePassXC/keepassxc.ini `
+    -Destination (scoop which keepassxc).Replace('~', $env:USERPROFILE).Replace('KeePassXC.exe', 'config\keepassxc.ini') `
+    -Force
 
 Start-Process -NoNewWindow -FilePath (scoop which keepassxc).Replace('~', $env:USERPROFILE) | Out-Null
 
