@@ -1,0 +1,1 @@
+git clone https://github.com/squeaky-pl/dotfiles.git $env:USERPROFILE/dotfiles
