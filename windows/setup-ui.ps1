@@ -20,6 +20,7 @@ New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop\WindowMetrics" `
 & { $p = 'HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3'; $v = (Get-ItemProperty -Path $p).Settings; $v[8] = 3; &Set-ItemProperty -Path $p -Name Settings -Value $v; &Stop-Process -f -ProcessName explorer }
 
 # https://www.tomshardware.com/how-to/disable-windows-web-search
+New-Item -Force -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer"
 New-ItemProperty -Force -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer" `
     -Name "DisableSearchBoxSuggestions" `
     -PropertyType DWord `
