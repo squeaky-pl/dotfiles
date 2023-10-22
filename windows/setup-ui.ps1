@@ -1,3 +1,6 @@
+scoop bucket add extras
+scoop install autohotkey
+
 ## Dark theme
 New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" `
     -Name "SystemUsesLightTheme" `
@@ -11,25 +14,18 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\T
 
 
 ## Mouse cursor
-New-ItemProperty -Force -Path "HKCU:\Control Panel\Cursors" `
-    -Name "(Default)" `
-    -Value "Windows Black" | Out-Null
+# Note that it was close to impossible to set those values nicely using registry
+# Also Settings app will install a nicer cursor theme
+$cursor_theme = (Get-ItemProperty -Path "HKCU:\Control Panel\Cursors" `
+    -Name "(Default)")."(default)"
+$cursor_size = (Get-ItemProperty -Path "HKCU:\Control Panel\Cursors" `
+    -Name "CursorBaseSize").CursorBaseSize
 
-New-ItemProperty -Force -Path "HKCU:\Control Panel\Cursors" `
-    -Name "CursorBaseSize" `
-    -PropertyType DWord `
-    -Value 48
-
-$CSharpSig = @'
-[DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
-public static extern bool SystemParametersInfo(
-                    uint uiAction,
-                    uint uiParam,
-                    uint pvParam,
-                    uint fWinIni);
-'@
-$CursorRefresh = Add-Type -MemberDefinition $CSharpSig -Name WinAPICall -Namespace SystemParamInfo -PassThru
-$CursorRefresh::SystemParametersInfo(0x0057, 0, $null, 0)
+if ( $cursor_theme -eq "Windows Aero" -and $cursor_size -eq 32 ) {
+    Start-Process -Wait `
+        -FilePath (scoop which autohotkey).Replace('~', $env:USERPROFILE) `
+        -ArgumentList $PSScriptRoot\cursor-theme.ahk | Out-Null
+}
 
 ## Disable animations
 # https://superuser.com/questions/1052763/windows-10-disable-animations-via-regedit-script
