@@ -9,6 +9,17 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\T
     -PropertyType Dword `
     -Value 0 | Out-Null
 
+
+## Mouse cursor
+New-ItemProperty -Force -Path "HKCU:\Control Panel\Cursors" `
+    -Name "(Default)" `
+    -Value "Windows Black" | Out-Null
+
+New-ItemProperty -Force -Path "HKCU:\Control Panel\Cursors" `
+    -Name "CursorBaseSize" `
+    -PropertyType DWord `
+    -Value 48
+
 ## Disable animations
 # https://superuser.com/questions/1052763/windows-10-disable-animations-via-regedit-script
 New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop\WindowMetrics" `
