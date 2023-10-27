@@ -18,6 +18,26 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Clipboard" `
     -PropertyType Dword `
     -Value 1 | Out-Null
 
+## Set scaling
+# https://winaero.com/how-to-change-dpi-display-scaling-in-windows-11/
+# 96 = default 100%
+# 120 = medium 125%
+# 144 = larger 150%
+# 192 = extra-large 200%
+# 240 = custom 250%
+# 288 = custom 300%
+# 384 = custom 400%
+# 480 = custom 500%
+New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop" `
+    -Name "LogPixels" `
+    -PropertyType Dword `
+    -Value 192 | Out-Null
+
+New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop" `
+    -Name "Win8DpiScaling" `
+    -PropertyType Dword `
+    -Value 1 | Out-Null
+
 ## Mouse cursor
 # Note that it was close to impossible to set those values nicely using registry
 # Also Settings app will install a nicer cursor theme
