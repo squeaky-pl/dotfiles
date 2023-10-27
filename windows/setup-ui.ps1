@@ -12,6 +12,11 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\T
     -PropertyType Dword `
     -Value 0 | Out-Null
 
+## Enable clipboard history
+New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Clipboard" `
+    -Name "EnableClipboardHistory" `
+    -PropertyType Dword `
+    -Value 1 | Out-Null
 
 ## Mouse cursor
 # Note that it was close to impossible to set those values nicely using registry
