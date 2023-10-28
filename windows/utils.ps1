@@ -55,3 +55,14 @@ function Get-Scoop-App-Current-Folder
 
     (Get-Item (Get-Scoop-App-Location $Application)).Directory
 }
+
+function New-Quick-Access
+{
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string] $Source
+    )
+
+    $shellApplication = New-Object -com Shell.Application
+    $shellApplication.Namespace($Source).Self.InvokeVerb("pintohome")
+}
