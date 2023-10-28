@@ -35,3 +35,23 @@ function Get-Scoop-App-Location
 
     (scoop which $Application).Replace('~', $env:USERPROFILE)
 }
+
+function Start-Scoop-App
+{
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string] $Application
+    )
+
+    Start-Process -NoNewWindow -FilePath (Get-Scoop-App-Location $Application)
+}
+
+function Get-Scoop-App-Current-Folder
+{
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string] $Application
+    )
+
+    (Get-Item (Get-Scoop-App-Location $Application)).Directory
+}

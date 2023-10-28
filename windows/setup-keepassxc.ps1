@@ -1,3 +1,5 @@
+. $PSScriptRoot\utils.ps1
+
 scoop bucket add extras
 scoop install extras/keepassxc
 
@@ -21,6 +23,4 @@ foreach ($browser_config in $browser_configs)
 
 Start-Process -NoNewWindow -FilePath (scoop which keepassxc).Replace('~', $env:USERPROFILE) | Out-Null
 
-New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
-    -Name "KeePassXC" `
-    -Value (scoop which keepassxc).Replace('~', $env:USERPROFILE) | Out-Null
+New-Autostart-Item (Get-Scoop-App-Location keepassxc)
