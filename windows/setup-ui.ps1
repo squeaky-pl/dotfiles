@@ -38,6 +38,19 @@ New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop" `
     -PropertyType Dword `
     -Value 1 | Out-Null
 
+## Explorer
+# https://superuser.com/questions/1151844/how-to-toggle-show-hide-hidden-files-in-windows-through-command-line
+New-ItemProperty -Force "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
+    -Name "Hidden" `
+    -PropertyType Dword `
+    -Value 1 | Out-Null
+
+# https://winbuzzer.com/2021/08/27/how-to-show-file-extensions-in-windows-10-3-methods-xcxwbt/
+New-ItemProperty -Force "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
+    -Name "HideFileExt" `
+    -PropertyType Dword `
+    -Value 0 | Out-Null
+
 ## Mouse cursor
 # Note that it was close to impossible to set those values nicely using registry
 # Also Settings app will install a nicer cursor theme
