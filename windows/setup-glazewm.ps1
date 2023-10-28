@@ -1,3 +1,5 @@
+. $PSScriptRoot\utils.ps1
+
 scoop bucket add extras
 scoop install extras/glazewm
 
@@ -8,6 +10,4 @@ if(!(Test-Path $env:USERPROFILE\.glaze-wm\config.yaml))
     cmd /c mklink $env:USERPROFILE\.glaze-wm\config.yaml $PSScriptRoot\.glaze-wm\config.yaml
 }
 
-New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
-    -Name "GlazeWM" `
-    -Value (scoop which glazewm).Replace('~', $env:USERPROFILE) | Out-Null
+New-Autostart-Item (Get-Scoop-App-Location glazewm)
