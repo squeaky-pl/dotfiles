@@ -1,0 +1,39 @@
+{
+    "terminal.integrated.shellIntegration.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.renderWhitespace": "all",
+    "editor.stickyScroll.enabled": true,
+    "accessibility.dimUnfocused.enabled": true,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.guides.bracketPairs": "active",
+    "workbench.colorTheme": "Default Dark+",
+    "editor.semanticTokenColorCustomizations": {
+        "[Default Dark+]": {
+            "rules": {
+                "function.declaration": {
+                    "bold": true,
+                },
+                "class.declaration": {
+                    "bold": true,
+                },
+                "method.declaration": {
+                    "bold": true,
+                },
+                "*.decorator": {
+                    "italic": true,
+                },
+                "*.typeHint": {
+                    "italic": true,
+                },
+            }
+        }
+    },
+    "editor.fontVariations": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "vsicons.dontShowNewVersionMessage": true,
+}

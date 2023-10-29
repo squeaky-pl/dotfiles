@@ -53,7 +53,7 @@ function Get-Scoop-App-Current-Folder
         [string] $Application
     )
 
-    (Get-Item (Get-Scoop-App-Location $Application)).Directory
+    scoop prefix $Application
 }
 
 function New-Quick-Access
