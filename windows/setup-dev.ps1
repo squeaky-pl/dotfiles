@@ -23,6 +23,7 @@ $extensions = @(
     "ms-vscode-remote.remote-ssh",
     "mark-wiemer.vscode-autohotkey-plus-plus",
     "vscode-icons-team.vscode-icons",
+    "mkxml.vscode-filesize",
     "ms-python.python",
     "ms-python.black-formatter",
     "twixes.pypi-assistant"
