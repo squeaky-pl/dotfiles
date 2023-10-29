@@ -38,6 +38,18 @@ New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop" `
     -PropertyType Dword `
     -Value 1 | Out-Null
 
+## Language Bar
+# https://www.elevenforum.com/t/show-language-bar-on-desktop-or-taskbar-in-windows-11.4107/
+Set-WinLanguageBarOption -UseLegacyLanguageBar
+Set-WinLanguageBarOption
+
+# https://stackoverflow.com/questions/66267355/add-international-english-keyboard-in-windows-10-through-the-powershell
+Set-WinUserLanguageList en-US,pl-PL -Force
+# Add US international layout
+$languageList = Get-WinUserLanguageList
+$languageList[0].InputMethodTips.Add('0409:00020409')
+Set-WinUserLanguageList -LanguageList $languageList -Force
+
 ## Explorer
 # https://superuser.com/questions/1151844/how-to-toggle-show-hide-hidden-files-in-windows-through-command-line
 New-ItemProperty -Force "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
