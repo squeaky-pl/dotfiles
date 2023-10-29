@@ -14,7 +14,7 @@ $python_versions = @(
 )
 
 foreach ($python_version in $python_versions) {
-    winget install --disable-interactivity -e --id Python.Python.$python_version
+    winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id Python.Python.$python_version
 }
 
 $extensions = @(

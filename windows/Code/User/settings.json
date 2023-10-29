@@ -5,26 +5,24 @@
     "accessibility.dimUnfocused.enabled": true,
     "workbench.iconTheme": "vscode-icons",
     "editor.guides.bracketPairs": "active",
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Default Dark Modern",
     "editor.semanticTokenColorCustomizations": {
-        "[Default Dark+]": {
-            "rules": {
-                "function.declaration": {
-                    "bold": true,
-                },
-                "class.declaration": {
-                    "bold": true,
-                },
-                "method.declaration": {
-                    "bold": true,
-                },
-                "*.decorator": {
-                    "italic": true,
-                },
-                "*.typeHint": {
-                    "italic": true,
-                },
-            }
+        "rules": {
+            "function.declaration": {
+                "bold": true,
+            },
+            "class.declaration": {
+                "bold": true,
+            },
+            "method.declaration": {
+                "bold": true,
+            },
+            "*.decorator": {
+                "italic": true,
+            },
+            "*.typeHint": {
+                "italic": true,
+            },
         }
     },
     "editor.fontVariations": true,
