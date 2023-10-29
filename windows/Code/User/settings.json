@@ -1,8 +1,5 @@
 {
     "terminal.integrated.shellIntegration.enabled": true,
-    "[python]": {
-        "editor.formatOnType": true
-    },
     "editor.renderWhitespace": "all",
     "editor.stickyScroll.enabled": true,
     "accessibility.dimUnfocused.enabled": true,
@@ -36,4 +33,9 @@
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
     "vsicons.dontShowNewVersionMessage": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
 }
