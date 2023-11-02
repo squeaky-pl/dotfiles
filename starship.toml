@@ -3,3 +3,17 @@ symbol = "🌿 "
 
 [git_metrics]
 disabled = false
+
+[os]
+disabled = false
+format = "$symbol "
+symbols.Windows = "⊞ "
+
+[username]
+show_always = true
+
+[hostname]
+ssh_only = false
+
+[shell]
+disabled = false
