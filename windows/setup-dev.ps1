@@ -5,6 +5,9 @@ scoop install dbeaver
 scoop install vscode
 scoop install zettlr
 
+scoop add nerd-fonts
+sccop install cascadiacode-nf-mono
+
 Copy-Item $PSScriptRoot\Code\User -Destination "$(Get-Scoop-App-Current-Folder vscode)\data\user-data" -Recurse -Force
 
 $python_versions = @(

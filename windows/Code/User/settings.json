@@ -36,4 +36,5 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter",
     },
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'"
 }
