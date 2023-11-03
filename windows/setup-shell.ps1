@@ -1,10 +1,14 @@
 . $PSScriptRoot\utils.ps1
 
+# update powershell
+winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id Microsoft.PowerShell
 scoop install starship
 
-New-Item -ItemType Directory -Force (Split-Path -parent $PROFILE)
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3#profile-types-and-locations
+$current_user_profile = "$env:USERPROFILE\Documents\PowerShell\Profile.ps1"
+New-Item -ItemType Directory -Force (Split-Path -parent $current_user_profile)
 
-cmd /c mklink $PROFILE $PSScriptRoot\Microsoft.PowerShell_profile.ps1
+cmd /c mklink $current_user_profile $PSScriptRoot\Profile.ps1
 
 New-Item -ItemType Directory -Force $env:USERPROFILE\.config
 
