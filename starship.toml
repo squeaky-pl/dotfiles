@@ -1,13 +1,26 @@
+# Symbols from https://starship.rs/presets/nerd-font.html
+
 [git_branch]
-symbol = "🌿 "
+symbol = " "
 
 [git_metrics]
 disabled = false
 
+[python]
+symbol = " "
+
 [os]
 disabled = false
 format = "$symbol "
-symbols.Windows = "⊞ "
+
+[os.symbols]
+CentOS = ""
+Debian = ""
+Fedora = ""
+Linux = ""
+Macos = ""
+Ubuntu = ""
+Windows = ""
 
 [username]
 show_always = true
@@ -17,3 +30,5 @@ ssh_only = false
 
 [shell]
 disabled = false
+powershell_indicator = ""
+cmd_indicator = ""
