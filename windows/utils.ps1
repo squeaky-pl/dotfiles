@@ -4,13 +4,17 @@ function New-Shortcut
         [Parameter(Mandatory=$true, Position=0)]
         [string] $Source,
         [Parameter(Mandatory=$true)]
-        [string] $Destination
-        
+        [string] $Destination,
+        [string] $Arguments
     )
 
     $WshShell = New-Object -comObject WScript.Shell
     $Shortcut = $WshShell.CreateShortcut($Destination)
     $Shortcut.TargetPath = $Source
+    if($PSBoundParameters.ContainsKey('Arguments')) {
+        $Shortcut.Arguments = $Arguments
+    }
+
     $Shortcut.Save()
 }
 
@@ -18,12 +22,18 @@ function New-Autostart-Item
 {
     param (
         [Parameter(Mandatory=$true, Position=0)]
-        [string] $Source
+        [string] $Source,
+        [string] $Arguments,
+        [string] $Name
     )
 
-    $baseName = (Get-Item $Source).BaseName
+    if(!$PSBoundParameters.ContainsKey('Name')) {
+        $Name = (Get-Item $Source).BaseName
+    }
 
-    New-Shortcut $Source -Destination "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\${baseName}.lnk"
+    New-Shortcut $Source `
+        -Arguments $Arguments `
+        -Destination "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\${Name}.lnk"
 }
 
 function Get-Scoop-App-Location
