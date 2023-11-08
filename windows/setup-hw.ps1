@@ -4,6 +4,9 @@ scoop install hwmonitor
 scoop install cpu-z
 scoop install crystaldiskinfo
 scoop install crystaldiskmark
+# https://www.guru3d.com/download/display-driver-uninstaller-download/
+scoop install ddu
+scoop install snappy-driver-installer-origin
 
 Copy-Item $PSScriptRoot\HWMonitor\hwmonitorw.ini `
     -Destination $env:USERPROFILE\scoop\apps\hwmonitor\current\hwmonitorw.ini `
