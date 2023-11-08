@@ -100,6 +100,12 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\S
     -PropertyType Dword `
     -Value 0 | Out-Null
 
+# https://www.majorgeeks.com/content/page/how_to_disable_the_windows_10_welcome_experience_page.html
+New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" `
+    -Name "SubscribedContent-310093Enabled" `
+    -PropertyType Dword `
+    -Value 0 | Out-Null
+
 # https://www.minitool.com/news/show-hide-task-view-button-windows-11.html
 New-Item -Force -Path  "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
