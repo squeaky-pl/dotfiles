@@ -34,6 +34,10 @@ Start-Process -NoNewWindow `
     -FilePath wscript -ArgumentList `
     "$PSScriptRoot\invisible.vbs $(Get-Scoop-App-Location rclone) mount dropbox: Y: --network-mode --vfs-cache-mode full --volname \\cloud\$Env:UserName\dropbox"
 
+    Start-Process -NoNewWindow `
+    -FilePath wscript -ArgumentList `
+    "$PSScriptRoot\invisible.vbs $(Get-Scoop-App-Location rclone) mount workbox: Z: --network-mode --vfs-cache-mode full --volname \\cloud\$Env:UserName\workbox"
+
 New-Autostart-Item wscript `
     -Arguments "$PSScriptRoot\invisible.vbs $(Get-Scoop-App-Location rclone) mount box: X: --network-mode --vfs-cache-mode full --volname \\cloud\$Env:UserName\box" `
     -Name "Mount box"
@@ -41,3 +45,7 @@ New-Autostart-Item wscript `
 New-Autostart-Item wscript `
     -Arguments "$PSScriptRoot\invisible.vbs $(Get-Scoop-App-Location rclone) mount dropbox: Y: --network-mode --vfs-cache-mode full --volname \\cloud\$Env:UserName\dropbox" `
     -Name "Mount dropbox"
+
+New-Autostart-Item wscript `
+    -Arguments "$PSScriptRoot\invisible.vbs $(Get-Scoop-App-Location rclone) mount workbox: Z: --network-mode --vfs-cache-mode full --volname \\cloud\$Env:UserName\workbox" `
+    -Name "Mount workbox"
