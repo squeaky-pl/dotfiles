@@ -1,3 +1,5 @@
+. $PSScriptRoot\utils.ps1
+
 scoop bucket add extras
 scoop install autohotkey
 scoop install sudo
@@ -113,3 +115,19 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\E
     -Name "ShowTaskViewButton" `
     -PropertyType Dword `
     -Value 0 | Out-Null
+
+# Unpin chat
+# https://andrewstaylor.com/2023/02/10/removing-teams-chat-from-windows-11-via-powershell-and-intune/
+sudo New-Item -Force -Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Chat"
+sudo New-ItemProperty -Force -Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Chat" `
+    -Name "ChatIcon" `
+    -Value 2 | Out-Null
+
+# https://www.top-password.com/blog/remove-widgets-on-windows-11-taskbar/
+New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
+    -Name "TaskbarDa" `
+    -PropertyType Dword `
+    -Value 0 | Out-Null
+
+Remove-Taskbar-Pin "Microsoft Store"
+Remove-Taskbar-Pin "My Dell"
