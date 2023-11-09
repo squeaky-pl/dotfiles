@@ -1,0 +1,32 @@
+{
+    "startup": true,
+    "enabled": {
+        "AlwaysOnTop": true,
+        "Awake": true,
+        "ColorPicker": true,
+        "CropAndLock": true,
+        "EnvironmentVariables": true,
+        "FancyZones": true,
+        "File Explorer": true,
+        "File Locksmith": true,
+        "FindMyMouse": true,
+        "Hosts": true,
+        "Image Resizer": true,
+        "Keyboard Manager": true,
+        "Measure Tool": true,
+        "MouseHighlighter": true,
+        "MouseJump": false,
+        "MousePointerCrosshairs": false,
+        "MouseWithoutBorders": false,
+        "PastePlain": true,
+        "Peek": true,
+        "PowerRename": true,
+        "PowerToys Run": true,
+        "QuickAccent": false,
+        "RegistryPreview": true,
+        "Shortcut Guide": true,
+        "TextExtractor": true,
+        "Video Conference": false
+    },
+    "powertoys_version": "v0.75.1"
+}
