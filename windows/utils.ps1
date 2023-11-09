@@ -85,3 +85,12 @@ function Remove-Taskbar-Pin
     )
     ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ?{$_.Name -eq $Application}).Verbs() | ?{$_.Name.replace('&','') -match 'Unpin from taskbar'} | %{$_.DoIt(); $exec = $true}
 }
+
+function Install-Winget-App
+{
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string] $Application
+    )
+    winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id $Application
+}
