@@ -3,7 +3,7 @@
 scoop install rclone
 winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id WinFsp.WinFsp
 
-if(!(Test-Path "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf")) {
+if(!(Test-Path "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf") -or !(Get-Content "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf")) {
     $temp_rclone_config = New-TemporaryFile
     Copy-Item $PSScriptRoot\rclone\rclone.boot.conf -Destination $temp_rclone_config -Force
 
