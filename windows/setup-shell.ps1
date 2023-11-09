@@ -8,8 +8,8 @@ scoop install starship
 $current_user_profile = "$env:USERPROFILE\Documents\PowerShell\Profile.ps1"
 New-Item -ItemType Directory -Force (Split-Path -parent $current_user_profile)
 
-cmd /c mklink $current_user_profile $PSScriptRoot\Profile.ps1
+sudo cmd /c mklink $current_user_profile $PSScriptRoot\Profile.ps1
 
 New-Item -ItemType Directory -Force $env:USERPROFILE\.config
 
-cmd /c mklink $env:USERPROFILE\.config\starship.toml $PSScriptRoot\..\starship.toml
+sudo cmd /c mklink $env:USERPROFILE\.config\starship.toml $PSScriptRoot\..\starship.toml
