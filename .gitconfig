@@ -4,6 +4,8 @@ email = squeaky_pl@gmx.com
 
 [color]
 ui = true
+interactive = auto
+diff = auto
 
 [push]
 default = current
@@ -13,11 +15,11 @@ pager = delta
 editor = hx
 
 [interactive]
-diffFilter = delta --color-only
+# diffFilter = delta --color-only
 
-[delta]
-features = unobtrusive-line-numbers
-whitespace-error-style = 22 reverse
+# [delta]
+# features = unobtrusive-line-numbers
+# whitespace-error-style = 22 reverse
 
 #[delta "decorations"]
 #commit-decoration-style = bold yellow box ul
