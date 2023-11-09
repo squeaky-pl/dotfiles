@@ -74,7 +74,7 @@ $cursor_theme = (Get-ItemProperty -Path "HKCU:\Control Panel\Cursors" `
 $cursor_size = (Get-ItemProperty -Path "HKCU:\Control Panel\Cursors" `
     -Name "CursorBaseSize").CursorBaseSize
 
-if ( $cursor_theme -eq "Windows Aero" -and $cursor_size -eq 32 ) {
+if ( ($cursor_theme -eq "Windows Aero" -or $cursor_theme -eq "Windows Default") -and $cursor_size -eq 32 ) {
     Start-Process -Wait `
         -FilePath (scoop which autohotkey).Replace('~', $env:USERPROFILE) `
         -ArgumentList $PSScriptRoot\cursor-theme.ahk | Out-Null
