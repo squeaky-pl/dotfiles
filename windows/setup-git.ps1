@@ -21,5 +21,5 @@ if(Test-Path $env:USERPROFILE/.ssh/id_rsa) {
 
 if(!(Test-Path $env:USERPROFILE/.gitconfig))
 {
-    cmd /c mklink $env:USERPROFILE\.gitconfig $PSScriptRoot\..\.gitconfig
+    sudo cmd /c mklink $env:USERPROFILE\.gitconfig $PSScriptRoot\..\.gitconfig
 }
