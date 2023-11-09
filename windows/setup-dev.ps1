@@ -9,6 +9,8 @@ scoop install zettlr
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf-mono
 
+Copy-Item $PSScriptRoot\Zettlr -Destination $env:APPDATA -Recurse -Force
+
 Copy-Item $PSScriptRoot\Code\User -Destination "$(Get-Scoop-App-Current-Folder vscode)\data\user-data" -Recurse -Force
 
 $python_versions = @(
