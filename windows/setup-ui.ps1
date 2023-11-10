@@ -86,6 +86,13 @@ New-ItemProperty -Force -Path "HKCU:\Control Panel\Desktop\WindowMetrics" `
     -Name "MinAnimate" `
     -Value "0" | Out-Null
 
+
+## Hide icons on desktop
+# https://superuser.com/questions/1368139/disable-show-desktop-icons-in-windows-with-powershell
+New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
+    -Name "HideIcons" `
+    -Value 1 | Out-Null
+
 ## Taskbar
 # https://winbuzzer.com/2021/03/19/how-to-hide-or-unhide-the-taskbar-in-windows-10-auto-hide-xcxwbt/
 & { $p = 'HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3'; $v = (Get-ItemProperty -Path $p).Settings; $v[8] = 3; &Set-ItemProperty -Path $p -Name Settings -Value $v; &Stop-Process -f -ProcessName explorer }
