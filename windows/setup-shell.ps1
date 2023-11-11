@@ -1,8 +1,8 @@
 . $PSScriptRoot\utils.ps1
 
 # update powershell
-winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id Microsoft.PowerShell
-scoop install starship
+Install-Winget-App Microsoft.PowerShell
+Install-Winget-App Starship.Starship
 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3#profile-types-and-locations
 $current_user_profile = "$env:USERPROFILE\Documents\PowerShell\Profile.ps1"
