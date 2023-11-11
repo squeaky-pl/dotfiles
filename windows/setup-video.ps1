@@ -1,7 +1,6 @@
 . $PSScriptRoot\utils.ps1
 
-scoop bucket add extras
-scoop install obs-studio
+Install-Winget-App OBSProject.OBSStudio
 Install-Winget-App VideoLAN.VLC
-scoop install shotcut
-scoop install handbrake 
+Install-Winget-App Meltytech.Shotcut
+Install-Winget-App HandBrake.HandBrake
