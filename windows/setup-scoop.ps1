@@ -1,1 +1,0 @@
-Invoke-RestMethod get.scoop.sh | Invoke-Expression
