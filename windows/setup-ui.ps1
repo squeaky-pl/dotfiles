@@ -138,3 +138,4 @@ New-ItemProperty -Force -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\E
 
 Remove-Taskbar-Pin "Microsoft Store"
 Remove-Taskbar-Pin "My Dell"
+Remove-Taskbar-Pin "Microsoft Teams"
