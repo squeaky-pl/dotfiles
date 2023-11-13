@@ -1,17 +1,18 @@
 . $PSScriptRoot\utils.ps1
 
 scoop bucket add extras
-scoop install dbeaver
-scoop install vscode
+Install-Winget-App dbeaver.dbeaver
+Install-Winget-App Zettlr.Zettlr
+Install-Winget-App Microsoft.VisualStudioCode
 scoop install helix
-scoop install zettlr
+
 
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf-mono
 
 Copy-Item $PSScriptRoot\Zettlr -Destination $env:APPDATA -Recurse -Force
 
-Copy-Item $PSScriptRoot\Code\User -Destination "$(Get-Scoop-App-Current-Folder vscode)\data\user-data" -Recurse -Force
+Copy-Item $PSScriptRoot\Code -Destination $env:APPDATA -Recurse -Force
 
 $python_versions = @(
     "3.8",
@@ -20,7 +21,7 @@ $python_versions = @(
 )
 
 foreach ($python_version in $python_versions) {
-    winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id Python.Python.$python_version
+    Install-Winget-App Python.Python.$python_version
 }
 
 $extensions = @(
@@ -36,6 +37,6 @@ $extensions = @(
 )
 foreach ($extension in $extensions) {
     Start-Process -NoNewWindow -Wait `
-    -FilePath "$(Get-Scoop-App-Current-Folder vscode)\bin\code.cmd" `
+    -FilePath "$env:LOCALAPPDATA\Programs\Microsoft VS Code\bin\code.cmd" `
     -ArgumentList "--install-extension",$extension
 }
