@@ -1,6 +1,5 @@
-scoop bucket add extras
-scoop install extras/powertoys
+. $PSScriptRoot\utils.ps1
 
 Copy-Item $PSScriptRoot/PowerToys -Destination $env:LOCALAPPDATA/Microsoft -Recurse -Force
 
-Start-Process -NoNewWindow -FilePath $env:USERPROFILE\scoop\apps\powertoys\current\PowerToys.exe
+Install-Winget-App Microsoft.PowerToys
