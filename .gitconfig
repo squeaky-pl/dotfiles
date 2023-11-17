@@ -13,6 +13,7 @@ default = current
 attributesfile = ~/.gitattributes
 pager = delta
 editor = hx
+autocrlf = false
 
 [interactive]
 # diffFilter = delta --color-only
