@@ -1,12 +1,9 @@
 . $PSScriptRoot\utils.ps1
 
-scoop bucket add extras
-scoop install extras/sharex
+Install-Winget-App ShareX.ShareX
 
-Copy-Item $PSScriptRoot\ShareX -Destination (Get-Scoop-App-Current-Folder sharex) -Recurse -Force
+Copy-Item $PSScriptRoot\ShareX -Destination $env:USERPROFILE\Documents -Recurse -Force
 
-New-Quick-Access "$(Get-Scoop-App-Current-Folder sharex)\ShareX\Screenshots"
+New-Quick-Access "$env:USERPROFILE\Documents\ShareX\Screenshots"
 
-Start-Scoop-App sharex
-
-New-Autostart-Item (Get-Scoop-App-Location sharex)
+Start-Process -NoNewWindow -FilePath $env:ProgramFiles\ShareX\ShareX.exe

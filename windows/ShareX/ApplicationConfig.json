@@ -1,4 +1,11 @@
 {
+  "DefaultTaskSettings": {
+    "GeneralSettings": {
+      "ToastWindowDuration": 6.0,
+      "ToastWindowSize": "800, 600",
+      "ToastWindowLeftClickAction": "OpenFolder"
+    }
+  },
   "UseWhiteShareXIcon": true,
   "FirstTimeMinimizeToTray": true,
   "ApplicationVersion": "15.0.0"
