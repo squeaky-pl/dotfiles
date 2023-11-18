@@ -32,9 +32,19 @@
     "python.analysis.inlayHints.variableTypes": true,
     "vsicons.dontShowNewVersionMessage": true,
     "[python]": {
-        "editor.formatOnType": true,
         "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        },
         "editor.defaultFormatter": "ms-python.black-formatter",
     },
-    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'"
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+    "terminal.integrated.profiles.windows": {
+        "nu": {
+          "path": "nu"
+        },
+        "Git Bash": null,
+        "Command Prompt": null
+    },
+    "terminal.integrated.defaultProfile.windows": "nu"
 }

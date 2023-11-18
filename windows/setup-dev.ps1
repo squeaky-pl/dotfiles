@@ -33,6 +33,7 @@ $extensions = @(
     "mkxml.vscode-filesize",
     "ms-python.python",
     "ms-python.black-formatter",
+    "charliermarsh.ruff",
     "twixes.pypi-assistant"
 )
 foreach ($extension in $extensions) {
