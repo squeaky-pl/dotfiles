@@ -34,7 +34,8 @@ $extensions = @(
     "ms-python.python",
     "ms-python.black-formatter",
     "charliermarsh.ruff",
-    "twixes.pypi-assistant"
+    "twixes.pypi-assistant",
+    "sleistner.vscode-fileutils"
 )
 foreach ($extension in $extensions) {
     Start-Process -NoNewWindow -Wait `
