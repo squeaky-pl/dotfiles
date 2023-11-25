@@ -46,5 +46,11 @@
         "Git Bash": null,
         "Command Prompt": null
     },
-    "terminal.integrated.defaultProfile.windows": "nu"
+    "terminal.integrated.profiles.osx": {
+        "nu": {
+          "path": "nu"
+        },
+    },
+    "terminal.integrated.defaultProfile.windows": "nu",
+    "terminal.integrated.defaultProfile.osx": "nu"
 }
