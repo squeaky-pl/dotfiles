@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# shellcheck disable=SC1091
+source "$DIR"/common.sh
+
+git --version &>/dev/null || install_package git
+
+safe_symlink "$DIR"/.gitconfig ~/.gitconfig
+safe_symlink "$DIR"/.gitattributes ~/.gitattributes
+
+if [ "$(detect_os)" = "Darwin" ]; then
+	delta --version &>/dev/null || install_package git-delta
+	install_package less
+fi
