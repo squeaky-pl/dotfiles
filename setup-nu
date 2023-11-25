@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+
+# shellcheck disable=SC1091
+source "$DIR"/common.sh
+
+install_package nushell
+install_package starship
+
+mkdir -p "$HOME/Library/Application Support/nushell"
+ln -s $DIR/nushell/config.nu "$HOME/Library/Application Support/nushell/config.nu"
+
+mkdir -p ~/.config
+ln -s  $DIR/starship.toml ~/.config/starship.toml
+
+mkdir -p ~/.cache/starship
+starship init nu > ~/.cache/starship/init.nu

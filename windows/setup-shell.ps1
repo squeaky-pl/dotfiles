@@ -20,4 +20,4 @@ New-Item -ItemType Directory -Force $env:USERPROFILE\.cache\starship
 
 Start-Process -Wait -NoNewWindow -FilePath $env:ProgramFiles\starship\bin\starship -ArgumentList "init nu" -RedirectStandardOutput $env:USERPROFILE\.cache\starship\init.nu
 
-Copy-Item $PSScriptRoot\nushell -Destination $env:APPDATA -Recurse -Force
+Copy-Item $PSScriptRoot\..\nushell -Destination $env:APPDATA -Recurse -Force
