@@ -758,6 +758,10 @@ $env.config = {
     ]
 }
 
-if ("~/.cache/starship/init.nu" | path exists) {
+if ("~/.cache/starship/init.nu" | path expand | path exists) {
     use ~/.cache/starship/init.nu
+}
+
+if ("~/.nu-extra" | path expand | path exists) {
+    source ~/.nu-extra
 }
