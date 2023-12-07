@@ -1,9 +1,9 @@
 . $PSScriptRoot\utils.ps1
 
-scoop install rclone
-winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id WinFsp.WinFsp
+Install-Winget-App Rclone.Rclone
+Install-Winget-App WinFsp.WinFsp
 
-if(!(Test-Path "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf") -or !(Get-Content "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf")) {
+if(!(Test-Path "$env:APPDATA\rclone\rclone.conf") -or !(Get-Content "$env:APPDATA\rclone\rclone.conf")) {
     $temp_rclone_config = New-TemporaryFile
     Copy-Item $PSScriptRoot\rclone\rclone.boot.conf -Destination $temp_rclone_config -Force
 
@@ -20,7 +20,7 @@ if(!(Test-Path "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf") -or !(Get-C
     Write-Output "Provide database credentials"
     Write-Output ""
 
-    keepassxc-cli.exe attachment-export $temp_database_name dotfiles/rclone.conf rclone.conf "$(Get-Scoop-App-Current-Folder rclone)\rclone.conf"
+    keepassxc-cli.exe attachment-export $temp_database_name dotfiles/rclone.conf rclone.conf "$env:APPDATA\rclone\rclone.conf"
 
     Remove-Item $temp_rclone_config -Force
     Remove-Item $temp_database_name -Force
