@@ -9,5 +9,14 @@
             "key": ""
         },
         "use_centralized_keyboard_hook": true
-    }
+    },
+    "plugins": [
+        {
+            "Id": "525995402BEF4A8CA860D92F6D108092",
+            "Name": "Visual Studio Code Workspaces",
+            "Disabled": false,
+            "ActionKeyword": "{",
+            "AdditionalOptions": []
+        }
+    ]
 }
