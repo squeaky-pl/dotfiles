@@ -52,5 +52,6 @@
         },
     },
     "terminal.integrated.defaultProfile.windows": "nu",
-    "terminal.integrated.defaultProfile.osx": "nu"
+    "terminal.integrated.defaultProfile.osx": "nu",
+    "fileutils.menus.context.editor": []
 }
