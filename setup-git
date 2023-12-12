@@ -8,6 +8,8 @@ source "$DIR"/common.sh
 git --version &>/dev/null || install_package git
 install_package helix
 
+install_package gh
+
 safe_symlink "$DIR"/.gitconfig ~/.gitconfig
 safe_symlink "$DIR"/.gitattributes ~/.gitattributes
 
