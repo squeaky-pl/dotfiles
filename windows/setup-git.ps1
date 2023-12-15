@@ -5,6 +5,7 @@ scoop install main/git
 scoop install sudo
 scoop install main/delta
 scoop install helix
+scoop install $PSScriptRoot\..\bucket\git-absorb.json
 
 Install-Winget-App GitHub.cli
 
