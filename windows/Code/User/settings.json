@@ -5,6 +5,12 @@
     "accessibility.dimUnfocused.enabled": true,
     "workbench.iconTheme": "vscode-icons",
     "editor.guides.bracketPairs": "active",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/*.egg-info": true
+    },
     "workbench.colorTheme": "Default Dark Modern",
     "editor.semanticTokenColorCustomizations": {
         "rules": {
