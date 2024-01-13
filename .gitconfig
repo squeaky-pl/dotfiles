@@ -34,4 +34,5 @@ autocrlf = false
 directory = *
 
 [merge]
+# https://adamj.eu/tech/2023/12/29/git-conflict-display-zdiff3/
 conflictStyle = zdiff3
