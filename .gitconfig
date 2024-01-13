@@ -31,4 +31,7 @@ autocrlf = false
 #file-style = bold yellow ul
 #file-decoration-style = none
 [safe]
-	directory = *
+directory = *
+
+[merge]
+conflictStyle = zdiff3
