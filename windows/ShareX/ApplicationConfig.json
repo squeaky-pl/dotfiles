@@ -8,5 +8,6 @@
   },
   "UseWhiteShareXIcon": true,
   "FirstTimeMinimizeToTray": true,
+  "AutoCheckUpdate": false,
   "ApplicationVersion": "15.0.0"
 }
