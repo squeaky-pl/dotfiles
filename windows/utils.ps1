@@ -94,3 +94,20 @@ function Install-Winget-App
     )
     winget install --accept-source-agreements --accept-package-agreements --disable-interactivity -e --id $Application
 }
+
+function Get-Winget-App-Path
+{
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string] $Id,
+        [Parameter(Mandatory=$true, Position=1)]
+        [string] $Directory,
+        [Parameter(Mandatory=$true, Position=2)]
+        [string] $Executable
+    )
+    $packagesPath = "$($env:LOCALAPPDATA)\Microsoft\WinGet\Packages"
+    $packagePath = Get-ChildItem -Path $packagesPath -Filter "$($Id)*"
+    $directoryPath = Get-ChildItem -Path $packagePath[0].FullName -Filter "$($Directory)*"
+    $executablePath = Get-ChildItem -Path $directoryPath[0].FullName -Filter $Executable
+    $executablePath[0].FullName
+}
