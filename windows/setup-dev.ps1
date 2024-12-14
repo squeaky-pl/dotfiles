@@ -1,11 +1,9 @@
 . $PSScriptRoot\utils.ps1
 
-scoop bucket add extras
+Install-Winget-App Helix.Helix
 Install-Winget-App dbeaver.dbeaver
 Install-Winget-App Zettlr.Zettlr
 Install-Winget-App Microsoft.VisualStudioCode
-scoop install helix
-
 
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf-mono
@@ -15,7 +13,6 @@ Copy-Item $PSScriptRoot\Zettlr -Destination $env:APPDATA -Recurse -Force
 Copy-Item $PSScriptRoot\Code -Destination $env:APPDATA -Recurse -Force
 
 $python_versions = @(
-    "3.8",
     "3.10",
     "3.12"
 )
