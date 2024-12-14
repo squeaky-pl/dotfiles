@@ -4,3 +4,7 @@ if(Get-Command starship -errorAction SilentlyContinue)
 }
 
 New-Alias -Name vim -Value helix
+
+function http {
+    & "$env:USERPROFILE\.local\bin\uvx" --from httpie http $args
+}

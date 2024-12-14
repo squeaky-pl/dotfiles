@@ -8,7 +8,7 @@ Install-Winget-App nushell
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf-mono
 
-Remove-Item -Force $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+Remove-Item -Force $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -ErrorAction Ignore
 sudo cmd /c mklink $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json $PSScriptRoot\WindowsTerminal\settings.json
 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3#profile-types-and-locations
@@ -22,3 +22,6 @@ New-Item -ItemType Directory -Force $env:USERPROFILE\.config
 sudo cmd /c mklink $env:USERPROFILE\.config\starship.toml $PSScriptRoot\..\starship.toml
 
 Copy-Item $PSScriptRoot\..\nushell -Destination $env:APPDATA -Recurse -Force
+
+# uvx
+Invoke-RestMethod https://astral.sh/uv/install.ps1 | Invoke-Expression
