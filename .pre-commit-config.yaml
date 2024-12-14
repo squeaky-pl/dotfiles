@@ -8,6 +8,7 @@ repos:
       - id: check-toml
       - id: name-tests-test
       - id: fix-byte-order-marker
+        exclude: \.ahk$
       - id: check-case-conflict
       - id: check-merge-conflict
       - id: debug-statements
