@@ -15,20 +15,20 @@
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "function.declaration": {
-                "bold": true,
+                "bold": true
             },
             "class.declaration": {
-                "bold": true,
+                "bold": true
             },
             "method.declaration": {
-                "bold": true,
+                "bold": true
             },
             "*.decorator": {
-                "italic": true,
+                "italic": true
             },
             "*.typeHint": {
-                "italic": true,
-            },
+                "italic": true
+            }
         }
     },
     "editor.fontVariations": true,
@@ -42,7 +42,7 @@
         "editor.codeActionsOnSave": {
             "source.fixAll": true
         },
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
     "terminal.integrated.profiles.windows": {
@@ -55,7 +55,7 @@
     "terminal.integrated.profiles.osx": {
         "nu": {
           "path": "nu"
-        },
+        }
     },
     "terminal.integrated.defaultProfile.windows": "nu",
     "terminal.integrated.defaultProfile.osx": "nu",
