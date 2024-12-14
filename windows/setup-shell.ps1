@@ -5,6 +5,12 @@ Install-Winget-App Microsoft.PowerShell
 Install-Winget-App Starship.Starship
 Install-Winget-App nushell
 
+scoop bucket add nerd-fonts
+scoop install cascadiacode-nf-mono
+
+Remove-Item -Force $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+sudo cmd /c mklink $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json $PSScriptRoot\WindowsTerminal\settings.json
+
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.3#profile-types-and-locations
 $current_user_profile = "$env:USERPROFILE\Documents\PowerShell\Profile.ps1"
 New-Item -ItemType Directory -Force (Split-Path -parent $current_user_profile)
