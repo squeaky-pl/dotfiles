@@ -22,6 +22,3 @@ New-Item -ItemType Directory -Force $env:USERPROFILE\.config
 sudo cmd /c mklink $env:USERPROFILE\.config\starship.toml $PSScriptRoot\..\starship.toml
 
 Copy-Item $PSScriptRoot\..\nushell -Destination $env:APPDATA -Recurse -Force
-
-# uvx
-Invoke-RestMethod https://astral.sh/uv/install.ps1 | Invoke-Expression
