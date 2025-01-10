@@ -46,3 +46,4 @@ Invoke-RestMethod https://astral.sh/uv/install.ps1 | Invoke-Expression
 
 & "$env:USERPROFILE\.local\bin\uv" tool install httpie
 & "$env:USERPROFILE\.local\bin\uv" tool install pre-commit
+& "$env:USERPROFILE\.local\bin\uv" tool install git-machete
