@@ -39,3 +39,11 @@ foreach ($extension in $extensions) {
     -FilePath "$env:LOCALAPPDATA\Programs\Microsoft VS Code\bin\code.cmd" `
     -ArgumentList "--install-extension",$extension
 }
+
+
+# uv
+Invoke-RestMethod https://astral.sh/uv/install.ps1 | Invoke-Expression
+
+& "$env:USERPROFILE\.local\bin\uv" tool install httpie
+& "$env:USERPROFILE\.local\bin\uv" tool install pre-commit
+& "$env:USERPROFILE\.local\bin\uv" tool install git-machete

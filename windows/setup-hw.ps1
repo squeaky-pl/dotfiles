@@ -1,21 +1,17 @@
-scoop bucket add extras
-scoop install hwinfo
-scoop install hwmonitor
-scoop install cpu-z
-scoop install crystaldiskinfo
-scoop install crystaldiskmark
-# https://www.guru3d.com/download/display-driver-uninstaller-download/
-scoop install ddu
-scoop install snappy-driver-installer-origin
+. $PSScriptRoot\utils.ps1
 
-Copy-Item $PSScriptRoot\HWMonitor\hwmonitorw.ini `
-    -Destination $env:USERPROFILE\scoop\apps\hwmonitor\current\hwmonitorw.ini `
-    -Force
+Install-Winget-App REALiX.HWiNFO
+Install-Winget-App CPUID.HWMonitor
+Install-Winget-App CPUID.CPU-Z
+Install-Winget-App CrystalDewWorld.CrystalDiskInfo
+Install-Winget-App CrystalDewWorld.CrystalDiskMark
+Install-Winget-App Wagnardsoft.DisplayDriverUninstaller
+Install-Winget-App GlennDelahoy.SnappyDriverInstallerOrigin
 
 Copy-Item $PSScriptRoot\DiskInfo\DiskInfo.ini `
-    -Destination $env:USERPROFILE\scoop\apps\crystaldiskinfo\current\DiskInfo.ini `
+    -Destination $env:APPDATA\CrystalDiskInfo\DiskInfo.ini `
     -Force
 
 Copy-Item $PSScriptRoot\DiskMark\DiskMark64.ini `
-    -Destination $env:USERPROFILE\scoop\apps\crystaldiskmark\current\DiskMark64.ini `
+    -Destination $env:APPDATA\CrystalDiskMark\DiskMark64.ini `
     -Force
